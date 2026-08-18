@@ -1,0 +1,30 @@
+{
+  "presentacion": {
+    "parrafo1": {
+      "es": "Me llamo María Clara Zúñiga Álvarez. Soy musicopedagoga y musicoterapeuta, radicada en Berlín, Alemania. Como migrante colombiana en Alemania, quiero compartir también mi experiencia como migrante dentro de esta profesión. Acompaño a personas para que, a través de la música, encuentren una manera de comunicarse, de expresarse y de establecer contacto. Este diario es un lugar para pensar en voz alta sobre lo que ocurre entre una sesión y la siguiente: los avances pequeños, las preguntas que no cierro, y lo que la música me sigue enseñando sobre escuchar.",
+      "en": "My name is María Clara Zúñiga Álvarez. I'm a music educator and music therapist, based in Berlin, Germany. As a Colombian migrant in Germany, I also want to share my experience as a migrant within this profession. I accompany people so that, through music, they can find a way to communicate, to express themselves, and to connect. This diary is a place to think out loud about what happens between one session and the next: the small breakthroughs, the questions I don't resolve, and what music keeps teaching me about listening.",
+      "de": "Mein Name ist María Clara Zúñiga Álvarez. Ich bin Musikpädagogin und Musiktherapeutin mit Sitz in Berlin, Deutschland. Als kolumbianische Migrantin in Deutschland möchte ich auch meine Erfahrung als Migrantin innerhalb dieses Berufs teilen. Ich begleite Menschen dabei, durch Musik einen Weg zu finden, sich mitzuteilen, sich auszudrücken und in Kontakt zu treten. Dieses Tagebuch ist ein Ort, um laut über das nachzudenken, was zwischen einer Sitzung und der nächsten geschieht: die kleinen Fortschritte, die Fragen, die ich nicht abschließe, und das, was mir die Musik immer wieder über das Zuhören beibringt."
+    },
+    "parrafo2": {
+      "es": "Lo que me mueve, día a día, es el poder de la música como puente para conectar con las personas. En una sesión de musicoterapia, la música facilita ese acercamiento y ayuda a que cada persona encuentre su propia forma, muy orgánica, de expresarse. Abro este espacio para compartir mi práctica y lo que voy investigando, pero también experiencias personales que atraviesan mi trabajo. Y quiero que sea un lugar abierto: donde otras y otros profesionales del área también puedan compartir su conocimiento y su experiencia.",
+      "en": "What moves me, day after day, is the power of music as a bridge to connect with people. In a music therapy session, music opens that connection and helps each person find their own, deeply organic, way of expressing themselves. I'm opening this space to share my practice and what I'm researching, but also personal experiences that run through my work. And I want it to be an open place — where other professionals in the field can share their knowledge and experience too.",
+      "de": "Was mich Tag für Tag antreibt, ist die Kraft der Musik als Brücke, um mit Menschen in Verbindung zu treten. In einer musiktherapeutischen Sitzung öffnet die Musik diese Annäherung und hilft jeder Person, ihren eigenen, ganz organischen Weg zu finden, sich auszudrücken. Ich eröffne diesen Raum, um meine Praxis und das, was ich erforsche, zu teilen, aber auch persönliche Erfahrungen, die mit meiner Arbeit verwoben sind. Und ich möchte, dass es ein offener Ort ist, an dem auch andere Fachpersonen aus dem Bereich ihr Wissen und ihre Erfahrungen teilen können."
+    }
+  },
+  "entradas": [
+    {
+      "categoria": "reflexiones",
+      "fecha": { "es": "12 ago", "en": "Aug 12", "de": "12. Aug." },
+      "titulo": {
+        "es": "Detenerse para poder acompañar",
+        "en": "Stopping to Be Able to Accompany",
+        "de": "Innehalten, um begleiten zu können"
+      },
+      "texto": {
+        "es": "Llevo un tiempo buscando ampliar mi camino como musicoterapeuta, y este diario nace de esa búsqueda. A veces el cuerpo y la mente avisan antes que una misma: dicen que hay que detenerse y buscar nuevas formas de habitar lo que nos apasiona. Como terapeuta trabajo a diario con las emociones y los retos de otras personas, y para poder sostener eso, mi propia salud — física y emocional — necesita estar lo bastante fuerte. Empezar este espacio es, en el fondo, parte de ese cuidado: una nueva etapa que emprendo también por mí. Poder ver la propia vulnerabilidad, y no tenerle miedo a mostrarla, creo que es un buen comienzo para conocerse a mayor profundidad — y para llegar a ver cosas que quizás antes no había descubierto o notado.",
+        "en": "I've spent some time looking to expand my path as a music therapist, and this diary was born from that search. Sometimes the body and mind speak up before we do: they say it's time to stop and find new ways of inhabiting what we're passionate about. As a therapist, I work daily with other people's emotions and struggles, and to be able to hold that, my own health — physical and emotional — needs to be strong enough. Starting this space is, in a way, part of that care: a new stage I'm taking on for myself too. Being able to see one's own vulnerability, and not being afraid to show it, is I think a good starting point for knowing yourself more deeply — and for reaching things you may not have discovered or noticed before.",
+        "de": "Ich suche schon eine Weile danach, meinen Weg als Musiktherapeutin zu erweitern, und aus dieser Suche ist dieses Tagebuch entstanden. Manchmal melden sich Körper und Geist, bevor man selbst es merkt: Sie sagen, dass es Zeit ist innezuhalten und neue Wege zu finden, das zu leben, wofür man brennt. Als Therapeutin arbeite ich täglich mit den Emotionen und Herausforderungen anderer Menschen, und um das tragen zu können, muss meine eigene Gesundheit — körperlich wie emotional — stark genug sein. Diesen Raum zu eröffnen ist im Grunde Teil dieser Fürsorge: eine neue Etappe, die ich auch für mich selbst beginne. Die eigene Verletzlichkeit sehen zu können, und keine Angst zu haben, sie zu zeigen, ist meiner Meinung nach ein guter Anfang, um sich selbst tiefer kennenzulernen — und um Dinge zu entdecken, die man vorher vielleicht nicht gesehen hat."
+      }
+    }
+  ]
+}

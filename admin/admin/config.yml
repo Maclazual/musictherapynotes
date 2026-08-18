@@ -1,0 +1,64 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+locale: 'es'
+
+collections:
+  - name: "contenido"
+    label: "Contenido del sitio"
+    files:
+      - name: "datos"
+        label: "Todo el contenido"
+        file: "content/data.json"
+        fields:
+          - label: "Presentación (Sobre este espacio)"
+            name: "presentacion"
+            widget: "object"
+            fields:
+              - label: "Párrafo 1"
+                name: "parrafo1"
+                widget: "object"
+                fields:
+                  - { label: "Español", name: "es", widget: "text" }
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Deutsch", name: "de", widget: "text" }
+              - label: "Párrafo 2"
+                name: "parrafo2"
+                widget: "object"
+                fields:
+                  - { label: "Español", name: "es", widget: "text" }
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Deutsch", name: "de", widget: "text" }
+          - label: "Entradas del diario"
+            name: "entradas"
+            widget: "list"
+            fields:
+              - label: "Categoría"
+                name: "categoria"
+                widget: "select"
+                options: ["ninos", "adultos-mayores", "reflexiones"]
+              - label: "Fecha"
+                name: "fecha"
+                widget: "object"
+                fields:
+                  - { label: "Español (ej. 12 ago)", name: "es", widget: "string" }
+                  - { label: "English (e.g. Aug 12)", name: "en", widget: "string" }
+                  - { label: "Deutsch (z.B. 12. Aug.)", name: "de", widget: "string" }
+              - label: "Título"
+                name: "titulo"
+                widget: "object"
+                fields:
+                  - { label: "Español", name: "es", widget: "string" }
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Deutsch", name: "de", widget: "string" }
+              - label: "Texto"
+                name: "texto"
+                widget: "object"
+                fields:
+                  - { label: "Español", name: "es", widget: "text" }
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Deutsch", name: "de", widget: "text" }

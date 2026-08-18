@@ -6,7 +6,7 @@
       "de": "Mein Name ist María Clara Zúñiga Álvarez. Ich bin Musikpädagogin und Musiktherapeutin mit Sitz in Berlin, Deutschland. Als kolumbianische Migrantin in Deutschland möchte ich auch meine Erfahrung als Migrantin innerhalb dieses Berufs teilen. Ich begleite Menschen dabei, durch Musik einen Weg zu finden, sich mitzuteilen, sich auszudrücken und in Kontakt zu treten. Dieses Tagebuch ist ein Ort, um laut über das nachzudenken, was zwischen einer Sitzung und der nächsten geschieht: die kleinen Fortschritte, die Fragen, die ich nicht abschließe, und das, was mir die Musik immer wieder über das Zuhören beibringt."
     },
     "parrafo2": {
-      "es": "Lo que me mueve, día a día, es el poder de la música como puente para conectar con las personas. En una sesión de musicoterapia, la música facilita ese acercamiento y ayuda a que cada persona encuentre su propia forma, muy orgánica, de expresarse. Abro este espacio para compartir mi práctica y lo que voy investigando, pero también experiencias personales que atraviesan mi trabajo. Y quiero que sea un lugar abierto: donde otras y otros profesionales del área también puedan compartir su conocimiento y su experiencia.",
+      "es": "Lo que me mueve, día a día, es el poder de la música como puente para conectar con las personas. En una sesión de musicoterapia, la música facilita ese acercamiento y ayuda a que cada persona encuentre su propia forma, muy orgánica, de expresarse. La idea de abrir este espacio es para compartir mi práctica y lo que voy investigando, pero también experiencias personales que atraviesan mi trabajo. Y quiero que sea un lugar abierto: donde otras y otros profesionales del área también puedan compartir su conocimiento y su experiencia.",
       "en": "What moves me, day after day, is the power of music as a bridge to connect with people. In a music therapy session, music opens that connection and helps each person find their own, deeply organic, way of expressing themselves. I'm opening this space to share my practice and what I'm researching, but also personal experiences that run through my work. And I want it to be an open place — where other professionals in the field can share their knowledge and experience too.",
       "de": "Was mich Tag für Tag antreibt, ist die Kraft der Musik als Brücke, um mit Menschen in Verbindung zu treten. In einer musiktherapeutischen Sitzung öffnet die Musik diese Annäherung und hilft jeder Person, ihren eigenen, ganz organischen Weg zu finden, sich auszudrücken. Ich eröffne diesen Raum, um meine Praxis und das, was ich erforsche, zu teilen, aber auch persönliche Erfahrungen, die mit meiner Arbeit verwoben sind. Und ich möchte, dass es ein offener Ort ist, an dem auch andere Fachpersonen aus dem Bereich ihr Wissen und ihre Erfahrungen teilen können."
     }
@@ -14,7 +14,11 @@
   "entradas": [
     {
       "categoria": "reflexiones",
-      "fecha": { "es": "12 ago", "en": "Aug 12", "de": "12. Aug." },
+      "fecha": {
+        "es": "12 ago",
+        "en": "Aug 12",
+        "de": "12. Aug."
+      },
       "titulo": {
         "es": "Detenerse para poder acompañar",
         "en": "Stopping to Be Able to Accompany",

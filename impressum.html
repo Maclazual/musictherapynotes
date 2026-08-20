@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notas de musicoterapia | Music Therapy Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F8EFDE;
+    --paper-alt:#F1E2C4;
+    --ink:#3C2A26;
+    --ink-soft:#7A5D50;
+    --sage:#D89A3D;
+    --sage-deep:#B9791F;
+    --plum:#C6472F;
+    --teal:#2E7D68;
+    --line:#E8D4AC;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Karla', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  ::selection{ background:var(--sage); color:var(--paper); }
+
+  a{ color:var(--sage-deep); }
+
+  [data-lang="es"]{ display:revert; }
+  [data-lang="en"], [data-lang="de"]{ display:none; }
+  html[data-active="en"] [data-lang="es"]{ display:none; }
+  html[data-active="en"] [data-lang="en"]{ display:revert; }
+  html[data-active="de"] [data-lang="es"]{ display:none; }
+  html[data-active="de"] [data-lang="de"]{ display:revert; }
+
+  .wrap{ max-width:760px; margin:0 auto; padding:0 28px; }
+
+  /* ---- NAV ---- */
+  header.site{
+    position:sticky; top:0; z-index:10;
+    background:rgba(238,240,234,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:760px; margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px; letter-spacing:0.06em;
+    color:var(--ink-soft);
+  }
+  .lang-toggle{
+    display:flex; border:1px solid var(--ink); border-radius:999px; overflow:hidden;
+    font-family:'IBM Plex Mono', monospace; font-size:12px;
+  }
+  .lang-toggle button{
+    background:none; border:none; padding:6px 14px; cursor:pointer;
+    color:var(--ink); font-family:inherit; font-size:inherit;
+    transition:background .2s ease, color .2s ease;
+  }
+  .lang-toggle button.active{ background:var(--ink); color:var(--paper); }
+  .lang-toggle button:focus-visible{ outline:2px solid var(--plum); outline-offset:-2px; }
+
+  /* ---- HERO ---- */
+  .hero{ padding:64px 0 40px; }
+  .hero h1{
+    font-family:'Newsreader', serif;
+    font-weight:500;
+    font-size:clamp(2.1rem, 5.5vw, 3.4rem);
+    line-height:1.08;
+    margin:0 0 18px;
+    color:var(--ink);
+  }
+  .hero .tagline{
+    font-family:'Newsreader', serif;
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin:0 0 34px;
+  }
+
+  /* waveform pulse */
+  .pulse{ display:flex; align-items:flex-end; gap:4px; height:44px; margin-bottom:8px; }
+  .pulse span{
+    display:block; width:4px; background:var(--sage);
+    border-radius:2px;
+    animation:beat 1.6s ease-in-out infinite;
+  }
+  .pulse span:nth-child(3n+2){ background:var(--plum); }
+  .pulse span:nth-child(3n+3){ background:var(--teal); }
+  @keyframes beat{
+    0%,100%{ transform:scaleY(0.3); }
+    50%{ transform:scaleY(1); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .pulse span{ animation:none; transform:scaleY(0.6); }
+  }
+
+  section{ padding:36px 0; }
+  .divider{ border:none; border-top:1px solid var(--line); margin:0; }
+
+  h2.section-title{
+    font-family:'Newsreader', serif; font-weight:500; font-style:italic;
+    font-size:1.5rem; color:var(--ink); margin:0 0 20px;
+  }
+
+  .about p{ max-width:60ch; color:var(--ink-soft); }
+
+  /* ---- ENTRIES ---- */
+  .entry{
+    padding:26px 0; border-bottom:1px solid var(--line);
+    display:grid; grid-template-columns:100px 1fr; gap:22px;
+  }
+  .entry:last-child{ border-bottom:none; }
+  .entry .date{
+    font-family:'IBM Plex Mono', monospace; font-size:12px;
+    color:var(--ink-soft); letter-spacing:0.03em; padding-top:4px;
+  }
+  .entry h3{
+    font-family:'Newsreader', serif; font-weight:500;
+    font-size:1.3rem; margin:0 0 10px; color:var(--ink);
+  }
+  .entry p{ margin:0 0 14px; color:var(--ink-soft); max-width:56ch; }
+
+  .mini-wave{ display:flex; align-items:flex-end; gap:3px; height:20px; }
+  .mini-wave span{ width:3px; background:var(--wave-color, var(--sage)); border-radius:2px; }
+
+  @media (max-width: 560px){
+    .entry{ grid-template-columns:1fr; gap:8px; }
+    .entry .date{ padding-top:0; }
+  }
+
+  footer{
+    padding:44px 0 60px;
+    color:var(--ink-soft);
+    font-size:0.95rem;
+  }
+  footer .made{
+    font-family:'IBM Plex Mono', monospace; font-size:12px;
+    color:var(--ink-soft); margin-top:26px;
+  }
+
+  .services{ display:grid; gap:22px; margin-top:6px; }
+  .service{
+    padding:18px 20px; background:var(--paper-alt);
+    border-radius:14px; border:1px solid var(--line);
+  }
+  .service h3{
+    font-family:'Newsreader', serif; font-weight:500; font-style:italic;
+    font-size:1.1rem; margin:0 0 8px; color:var(--ink);
+  }
+  .service p{ margin:0; color:var(--ink-soft); font-size:0.95rem; }
+
+  .filters{
+    display:flex; flex-wrap:wrap; gap:8px; margin-bottom:26px;
+  }
+  .filter-btn{
+    font-family:'IBM Plex Mono', monospace; font-size:12px;
+    padding:6px 14px; border-radius:999px; border:1px solid var(--ink);
+    background:none; color:var(--ink); cursor:pointer;
+    transition:background .2s ease, color .2s ease;
+  }
+  .filter-btn.active{ background:var(--ink); color:var(--paper); }
+  .entry.hidden{ display:none; }
+
+  /* ---- CONTACT FORM ---- */
+  .contact-form{ display:grid; gap:16px; max-width:480px; margin-top:8px; }
+  .field{ display:grid; gap:6px; }
+  .field label{
+    font-family:'IBM Plex Mono', monospace; font-size:12px;
+    color:var(--ink-soft); letter-spacing:0.02em;
+  }
+  .field input, .field textarea{
+    font-family:'Karla', sans-serif; font-size:0.98rem;
+    padding:10px 12px; border:1px solid var(--line); border-radius:8px;
+    background:var(--paper-alt); color:var(--ink);
+    resize:vertical;
+  }
+  .field textarea{ min-height:120px; }
+  .field input:focus, .field textarea:focus{
+    outline:2px solid var(--sage-deep); outline-offset:1px;
+  }
+  .submit-btn{
+    justify-self:start;
+    font-family:'IBM Plex Mono', monospace; font-size:13px;
+    padding:10px 24px; border-radius:999px; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); cursor:pointer;
+    transition:opacity .2s ease;
+  }
+  .submit-btn:hover{ opacity:0.85; }
+  .form-note{ font-size:0.85rem; color:var(--ink-soft); margin-top:2px; }
+
+  :focus-visible{ outline:2px solid var(--plum); outline-offset:2px; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-inner">
+    <span class="brand" style="display:flex; align-items:center; gap:8px;">
+      <svg width="22" height="22" viewBox="0 0 200 180" aria-hidden="true">
+        <circle cx="100" cy="90" r="70" fill="#F8EFDE" stroke="#3C2A26" stroke-opacity="0.25" stroke-width="1.5"/>
+        <circle cx="100" cy="90" r="6" fill="#3C2A26"/>
+        <path d="M 78 90 A 22 22 0 0 1 122 90" fill="none" stroke="#2E7D68" stroke-width="4" stroke-linecap="round"/>
+        <path d="M 68 90 A 32 32 0 0 1 132 90" fill="none" stroke="#D89A3D" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+        <path d="M 58 90 A 42 42 0 0 1 142 90" fill="none" stroke="#C6472F" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+      </svg>
+      NOTAS&nbsp;·&nbsp;MUSICOTERAPIA
+    </span>
+    <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+      <button type="button" id="btn-es" class="active" onclick="setLang('es')">ES</button>
+      <button type="button" id="btn-en" onclick="setLang('en')">EN</button>
+      <button type="button" id="btn-de" onclick="setLang('de')">DE</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="pulse" aria-hidden="true">
+      <span style="height:14px; animation-delay:0s"></span>
+      <span style="height:30px; animation-delay:.1s"></span>
+      <span style="height:18px; animation-delay:.2s"></span>
+      <span style="height:40px; animation-delay:.3s"></span>
+      <span style="height:22px; animation-delay:.4s"></span>
+      <span style="height:36px; animation-delay:.5s"></span>
+      <span style="height:16px; animation-delay:.6s"></span>
+      <span style="height:28px; animation-delay:.7s"></span>
+      <span style="height:12px; animation-delay:.8s"></span>
+    </div>
+
+    <h1 data-lang="es">Notas de<br>musicoterapia</h1>
+    <h1 data-lang="en">Music Therapy<br>Notes</h1>
+    <h1 data-lang="de">Musiktherapie-<br>Notizen</h1>
+
+    <p class="tagline" data-lang="es">Notas desde la sala de sesiones: música, presencia y lo que el silencio también dice.</p>
+    <p class="tagline" data-lang="en">Notes from the therapy room: music, presence, and what the silence says too.</p>
+    <p class="tagline" data-lang="de">Notizen aus dem Therapieraum: Musik, Präsenz und das, was auch die Stille sagt.</p>
+  </section>
+
+  <hr class="divider">
+
+  <section class="about">
+    <h2 class="section-title" data-lang="es">Sobre este espacio</h2>
+    <h2 class="section-title" data-lang="en">About this space</h2>
+    <h2 class="section-title" data-lang="de">Über diesen Raum</h2>
+
+    <div class="about-content" data-lang="es"></div>
+    <div class="about-content" data-lang="en"></div>
+    <div class="about-content" data-lang="de"></div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="entries">
+    <h2 class="section-title" data-lang="es">Entradas recientes</h2>
+    <h2 class="section-title" data-lang="en">Recent entries</h2>
+    <h2 class="section-title" data-lang="de">Neueste Einträge</h2>
+
+    <div class="filters" role="group" aria-label="Categorías / Categories / Kategorien">
+      <button type="button" class="filter-btn active" data-filter="todas" onclick="setFilter('todas', this)">
+        <span data-lang="es">Todas</span><span data-lang="en">All</span><span data-lang="de">Alle</span>
+      </button>
+      <button type="button" class="filter-btn" data-filter="ninos" onclick="setFilter('ninos', this)">
+        <span data-lang="es">Niños</span><span data-lang="en">Children</span><span data-lang="de">Kinder</span>
+      </button>
+      <button type="button" class="filter-btn" data-filter="adultos-mayores" onclick="setFilter('adultos-mayores', this)">
+        <span data-lang="es">Adultos mayores</span><span data-lang="en">Older adults</span><span data-lang="de">Ältere Menschen</span>
+      </button>
+      <button type="button" class="filter-btn" data-filter="reflexiones" onclick="setFilter('reflexiones', this)">
+        <span data-lang="es">Reflexiones</span><span data-lang="en">Reflections</span><span data-lang="de">Reflexionen</span>
+      </button>
+    </div>
+
+    <div id="entries-container"></div>
+
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <h2 class="section-title" data-lang="es">Servicios</h2>
+    <h2 class="section-title" data-lang="en">Services</h2>
+    <h2 class="section-title" data-lang="de">Leistungen</h2>
+
+    <div class="services">
+      <div class="service">
+        <h3 data-lang="es">Sesiones individuales</h3>
+        <h3 data-lang="en">Individual sessions</h3>
+        <h3 data-lang="de">Einzelsitzungen</h3>
+        <p data-lang="es">Espacio personalizado según objetivos terapéuticos, edad y necesidades específicas de cada persona.</p>
+        <p data-lang="en">Personalized sessions built around each person's therapeutic goals, age, and specific needs.</p>
+        <p data-lang="de">Individuell gestalteter Raum, abgestimmt auf therapeutische Ziele, Alter und die besonderen Bedürfnisse jeder Person.</p>
+      </div>
+
+      <div class="service">
+        <h3 data-lang="es">Niños y adolescentes</h3>
+        <h3 data-lang="en">Children & teens</h3>
+        <h3 data-lang="de">Kinder & Jugendliche</h3>
+        <p data-lang="es">Apoyo mediante música para el desarrollo emocional, la comunicación y la regulación en la infancia y la adolescencia.</p>
+        <p data-lang="en">Music-based support for emotional development, communication, and regulation in childhood and adolescence.</p>
+        <p data-lang="de">Musikbasierte Unterstützung für emotionale Entwicklung, Kommunikation und Regulation in Kindheit und Jugend.</p>
+      </div>
+
+      <div class="service">
+        <h3 data-lang="es">Adultos mayores y memoria</h3>
+        <h3 data-lang="en">Older adults & memory</h3>
+        <h3 data-lang="de">Ältere Menschen & Erinnerung</h3>
+        <p data-lang="es">Trabajo con demencia, Alzheimer y procesos de duelo, usando la música como puente cuando otras palabras ya no llegan.</p>
+        <p data-lang="en">Work with dementia, Alzheimer's, and grief, using music as a bridge when other words no longer reach.</p>
+        <p data-lang="de">Arbeit mit Demenz, Alzheimer und Trauerprozessen – Musik als Brücke, wenn andere Worte nicht mehr ankommen.</p>
+      </div>
+
+      <div class="service">
+        <h3 data-lang="es">Sesiones online</h3>
+        <h3 data-lang="en">Online sessions</h3>
+        <h3 data-lang="de">Online-Sitzungen</h3>
+        <p data-lang="es">Para quienes no pueden asistir presencialmente, con el formato musical adaptado especialmente a la distancia.</p>
+        <p data-lang="en">For those who can't attend in person, with the musical format specifically adapted for remote sessions.</p>
+        <p data-lang="de">Für alle, die nicht persönlich teilnehmen können – mit speziell angepasstem musikalischem Format für die Ferne.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="contact">
+    <h2 class="section-title" data-lang="es">Escríbeme</h2>
+    <h2 class="section-title" data-lang="en">Get in touch</h2>
+    <h2 class="section-title" data-lang="de">Schreib mir</h2>
+
+    <form class="contact-form" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contacto">
+      <p style="display:none;">
+        <label>No llenar esto: <input name="bot-field"></label>
+      </p>
+      <div class="field">
+        <label for="name" data-lang="es">Nombre</label>
+        <label for="name" data-lang="en">Name</label>
+        <label for="name" data-lang="de">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="field">
+        <label for="email" data-lang="es">Correo electrónico</label>
+        <label for="email" data-lang="en">Email</label>
+        <label for="email" data-lang="de">E-Mail</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="field">
+        <label for="message" data-lang="es">Mensaje</label>
+        <label for="message" data-lang="en">Message</label>
+        <label for="message" data-lang="de">Nachricht</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        <span data-lang="es">Enviar</span>
+        <span data-lang="en">Send</span>
+        <span data-lang="de">Senden</span>
+      </button>
+
+      <p class="form-note" data-lang="es">Suelo responder en 2–3 días.</p>
+      <p class="form-note" data-lang="en">I usually reply within 2–3 days.</p>
+      <p class="form-note" data-lang="de">Ich antworte normalerweise innerhalb von 2–3 Tagen.</p>
+    </form>
+  </section>
+
+  <hr class="divider">
+
+  <footer>
+    <p data-lang="es">¿Quieres escribirme o comentar una entrada? <a href="mailto:musica.la@web.de">musica.la@web.de</a></p>
+    <p data-lang="en">Want to write in or comment on an entry? <a href="mailto:musica.la@web.de">musica.la@web.de</a></p>
+    <p data-lang="de">Möchtest du mir schreiben oder einen Eintrag kommentieren? <a href="mailto:musica.la@web.de">musica.la@web.de</a></p>
+    <p class="made">
+      <span data-lang="es">Hecho con cuidado, una entrada a la vez.</span>
+      <span data-lang="en">Made with care, one entry at a time.</span>
+      <span data-lang="de">Mit Sorgfalt gemacht, ein Eintrag nach dem anderen.</span>
+    </p>
+    <p class="made">
+      <a href="/impressum.html" data-lang="es">Aviso legal</a>
+      <a href="/impressum.html" data-lang="en">Legal notice</a>
+      <a href="/impressum.html" data-lang="de">Impressum</a>
+    </p>
+  </footer>
+
+</main>
+
+<script>
+function setLang(lang){
+  document.documentElement.setAttribute('data-active', lang);
+  document.documentElement.setAttribute('lang', lang);
+  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+}
+
+function setFilter(category, btn){
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.entry').forEach(entry => {
+    const show = category === 'todas' || entry.getAttribute('data-category') === category;
+    entry.classList.toggle('hidden', !show);
+  });
+}
+
+const waveColors = ['var(--sage-deep)', 'var(--plum)', 'var(--teal)'];
+const waveHeights = [
+  [12,5,16,10,7],
+  [6,14,9,17,5],
+  [16,8,12,6,15],
+  [10,17,7,13,9]
+];
+
+function escapeHtml(str){
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+async function loadContent(){
+  try {
+    const res = await fetch('/content/data.json');
+    const data = await res.json();
+    const langs = ['es', 'en', 'de'];
+
+    // Rellenar "Sobre este espacio"
+    langs.forEach(lang => {
+      const container = document.querySelector('.about-content[data-lang="' + lang + '"]');
+      if (container && data.presentacion) {
+        container.innerHTML =
+          '<p>' + escapeHtml(data.presentacion.parrafo1[lang]) + '</p>' +
+          '<p>' + escapeHtml(data.presentacion.parrafo2[lang]) + '</p>';
+      }
+    });
+
+    // Rellenar las entradas
+    const entriesContainer = document.getElementById('entries-container');
+    if (entriesContainer && data.entradas) {
+      entriesContainer.innerHTML = data.entradas.map((entrada, i) => {
+        const color = waveColors[i % waveColors.length];
+        const heights = waveHeights[i % waveHeights.length];
+        const bars = heights.map(h => '<span style="height:' + h + 'px"></span>').join('');
+        const dateSpans = langs.map(l => '<span data-lang="' + l + '">' + escapeHtml(entrada.fecha[l]) + '</span>').join('');
+        const titleSpans = langs.map(l => '<h3 data-lang="' + l + '">' + escapeHtml(entrada.titulo[l]) + '</h3>').join('');
+        const textSpans = langs.map(l => '<p data-lang="' + l + '">' + escapeHtml(entrada.texto[l]) + '</p>').join('');
+        return '<article class="entry" data-category="' + entrada.categoria + '">' +
+          '<div class="date">' + dateSpans +
+          '<div class="mini-wave" aria-hidden="true" style="--wave-color:' + color + '">' + bars + '</div>' +
+          '</div><div>' + titleSpans + textSpans + '</div></article>';
+      }).join('');
+    }
+  } catch (err) {
+    console.error('No se pudo cargar el contenido:', err);
+  }
+}
+
+loadContent();
+</script>
+
+</body>
+</html>
